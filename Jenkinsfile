@@ -1,10 +1,6 @@
 pipeline {
   agent any
 
-  triggers {
-        pollSCM('H/5 * * * *') // Cứ 5 phút Jenkins tự lên GitHub kiểm tra code mới
-    }
-
   parameters {
     string(name: 'BRANCH', defaultValue: 'main', description: 'Git branch to build')
     booleanParam(name: 'RUN_TESTS', defaultValue: true, description: 'Run tests?')
